@@ -13,9 +13,9 @@
                     <div class="nav-main">
                         <!-- Tab Nav -->
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#category1" role="tab">Category1</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#category2" role="tab">Category2</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#category3" role="tab">Category3</a></li>
+                            @foreach($categories as $categoria)
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#category1" role="tab">{{$categoria->title}}</a></li>
+                            @endforeach
                         </ul>
                         <!--/ End Tab Nav -->
                     </div>
