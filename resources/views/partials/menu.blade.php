@@ -19,7 +19,7 @@
                                                 <li><a href="checkout.html">Compra</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Contacta amb nosaltres</a></li>
+                                        <li><a href="/contacte">Contacta amb nosaltres</a></li>
                                     </ul>
                                 </div>
                             </div>

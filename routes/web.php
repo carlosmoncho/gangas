@@ -22,3 +22,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+Route::get('/contacte', function () {
+    return view('contacte');
+});
