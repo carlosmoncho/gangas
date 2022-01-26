@@ -29,7 +29,8 @@ class GangaController extends Controller
      */
     public function create()
     {
-        return view('gangas.create');
+        $categories = Category::all();
+        return view('gangas.create', compact('categories'));
     }
 
     /**
@@ -50,7 +51,7 @@ class GangaController extends Controller
         $ganga->price = $request->get('price');
         $ganga->discount_price = $request->get('discount_price');
         $ganga->available = $request->get('available');
-        $ganga->category_id = '2';
+        $ganga->category_id =  $request->get('category_id');
         if ($request->hasFile('img')){
             $file = $request->file('img');
             $path = storage_path().'/app/public/img';
@@ -82,7 +83,8 @@ class GangaController extends Controller
     public function edit($id)
     {
         $ganga = Ganga::find($id);
-        return view('gangas.edit',compact('ganga'));
+        $categories = Category::all();
+        return view('gangas.edit',compact('ganga','categories'));
     }
 
     /**
@@ -102,6 +104,7 @@ class GangaController extends Controller
         $ganga->price = $request->get('price');
         $ganga->discount_price = $request->get('discount_price');
         $ganga->available = $request->get('available');
+        $ganga->category_id = $request->get('category_id');
         if ($request->hasFile('img')){
             $file = $request->file('img');
             $path = storage_path().'/app/public/img';

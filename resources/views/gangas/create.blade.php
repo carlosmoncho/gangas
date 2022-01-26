@@ -78,6 +78,19 @@
             </div>
         @endif
     </div>
+    <div class="form-group">
+        <label for="category_id">Categoria: </label>
+        <select id="category_id" name="category_id">
+            @foreach($categories as $categoria)
+                <option value="{{$categoria->id}}">{{$categoria->title}}</option>
+            @endforeach
+        </select>
+        @if ($errors->has('available'))
+            <div class="text-danger">
+                {{ $errors->first('available') }}
+            </div>
+        @endif
+    </div>
     <div class="form-group text-center">
         <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">Create ganga</button>
     </div>
