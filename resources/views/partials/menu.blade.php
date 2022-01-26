@@ -13,7 +13,7 @@
                                         <li><a href="#">Tenda<i class="ti-angle-down"></i><span class="new">New</span></a>
                                             <ul class="dropdown">
                                                 @if (Auth::user() && Auth::user()->admin)
-                                                    <li><a href="#">Nou Producte</a></li>
+                                                    <li><a href="{{route('gangas.create')}}">Nou Producte</a></li>
                                                 @endif
                                                 <li><a href="cart.html">Carret</a></li>
                                                 <li><a href="checkout.html">Compra</a></li>

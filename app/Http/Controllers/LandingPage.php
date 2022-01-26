@@ -15,8 +15,9 @@ class LandingPage extends Controller
      */
     public function index()
     {
+        $gangas = Ganga::all()->groupBy('category_id');
         $categories = Category::orderBy('id', 'ASC')->paginate(8);
-        return view('projecte', compact('categories'));
+        return view('projecte', compact('categories','gangas'));
     }
 
     /**

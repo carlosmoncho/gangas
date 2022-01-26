@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GangaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('gangas', GangaController::class)->only('update', 'edit','create','store')->middleware(['auth','admin']);
 
 Route::get('/', [\App\Http\Controllers\LandingPage::class,'index']);
 
@@ -26,3 +28,7 @@ Route::get('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout
 Route::get('/contacte', function () {
     return view('contacte');
 });
+
+Route::get('/ganga/{id}', [GangaController::class, 'index'])->name('ganga.index');
+Route::get('/delete/{id}', [GangaController::class,'destroy'])->name('ganga.delete')->middleware(['auth','admin']);
+

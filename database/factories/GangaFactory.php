@@ -16,7 +16,7 @@ class gangaFactory extends Factory
     {
         $precio = $this->faker->randomFloat(2, 1, 100 );
         return [
-            'title' => $this->faker->title(),
+            'title' => $this->faker->name(),
             'description' => $this->faker->text(),
             'URL' => $this->faker->text(),
             'category_id' => Category::inRandomOrder()->first()->id,
