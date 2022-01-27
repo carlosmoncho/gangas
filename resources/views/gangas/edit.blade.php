@@ -1,9 +1,10 @@
 @include('partials.barraDalt')
 @include('partials.menu')
-<h1>Edit Ganga</h1>
+<div class="d-flex d-flex justify-content-center vh-100">
     <form action="{{route('gangas.update', $ganga->id)}}" method='POST' enctype="multipart/form-data">
-    @method('PUT')
-    @csrf
+        <h1>Edit Ganga</h1>
+        @method('PUT')
+        @csrf
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" class="form-control" placeholder="Escribe el título aquí" value="{{$errors->any() ?  old('title') : $ganga->title}}">
@@ -97,4 +98,5 @@
             <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">Edit ganga</button>
         </div>
     </form>
+</div>
 @include('partials.footer')

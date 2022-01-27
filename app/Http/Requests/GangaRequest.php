@@ -30,8 +30,9 @@ class GangaRequest extends FormRequest
             'points' => 'required',
             'img' => 'required',
             'price' => 'required',
-            'discount_price' => 'required',
+            'discount_price' => 'required|lt:price',
             'available' => 'required',
+            'category_id' => 'required|exists:categories,id'
         ];
     }
     public function messages()

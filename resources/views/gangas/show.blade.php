@@ -1,6 +1,7 @@
 @include('partials.barraDalt')
 @include('partials.menu')
-<div class="row">
+
+<div class="d-flex d-flex justify-content-center vh-100">
     <div class="col-xl-3 col-lg-4 col-md-4 col-12">
         <div class="single-product">
             <div class="product-img">
@@ -37,11 +38,12 @@
                         {{$ganga->original_price}} $
                     @endif
                 </div>
-                <a href="{{route('ganga.delete',$ganga->id)}}"><i class="bi bi-trash"></i>delete</a>
-                <a href="{{route('gangas.edit',$ganga->id)}}"><i class="bi bi-pencil"></i>edit</a>
+                <br>
+                <button type="button" class="btn btn-dark"> <a href="{{route('ganga.delete',$ganga->id)}}"><i class="bi bi-trash"></i>delete</a></button>
+                <button type="button" class="btn btn-dark"><a href="{{route('gangas.edit',$ganga->id)}}"><i class="bi bi-pencil"></i>edit</a></button>
             </div>
         </div>
     </div>
 </div>
-
+<br>
 @include('partials.footer')

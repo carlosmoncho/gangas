@@ -18,8 +18,7 @@ class GangaController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $gangas = Ganga::orderByRaw('(price - discount_price) desc')->take(50)->get();
-        //$gangas = Ganga::orderBy('discount_price', 'ASC')->paginate(8);
+        $gangas = Ganga::orderByRaw('(price - discount_price) desc')->take(20)->get();
         $collection = collect($gangas)->sortDesc();
         $gangas = $collection->groupBy('category_id');
         $gangas->all();
@@ -64,7 +63,7 @@ class GangaController extends Controller
             $ganga->img = '/storage/img/'.$fileName;
         }
         $ganga->save();
-        return back();
+        return redirect('/');
     }
 
     /**
