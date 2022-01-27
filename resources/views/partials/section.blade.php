@@ -33,7 +33,7 @@
                                             <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                                                 <div class="single-product">
                                                     <div class="product-img">
-                                                        <a href="{{route('ganga.index', $ganga->id)}}">
+                                                        <a href="{{route('ganga.show', $ganga->id)}}">
                                                             @if($ganga->img)
                                                                 <img class="default-img" src="{{$ganga->img}}" alt="#">
                                                             @else
@@ -52,7 +52,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3><a href="{{route('ganga.index', $ganga->id)}}">{{$ganga->title}}</a></h3>
+                                                        <h3><a href="{{route('ganga.show', $ganga->id)}}">{{$ganga->title}}</a></h3>
                                                         <div class="product-price">
                                                             @if($ganga->discount_price)
                                                                 {{$ganga->discount_price??''}} $ -

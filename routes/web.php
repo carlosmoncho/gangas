@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('gangas', GangaController::class)->only('update', 'edit','create','store')->middleware(['auth','admin']);
+Route::resource('gangas', GangaController::class)->except('update', 'edit','create','store');
 
 Route::get('/', [\App\Http\Controllers\LandingPage::class,'index']);
 
@@ -29,6 +30,7 @@ Route::get('/contacte', function () {
     return view('contacte');
 });
 
-Route::get('/ganga/{id}', [GangaController::class, 'index'])->name('ganga.index');
+Route::get('/gangas', [GangaController::class, 'index'])->name('ganga.index');
+Route::get('/show/{id}', [GangaController::class, 'show'])->name('ganga.show');
 Route::get('/delete/{id}', [GangaController::class,'destroy'])->name('ganga.delete')->middleware(['auth','admin']);
 

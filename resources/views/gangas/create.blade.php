@@ -58,7 +58,7 @@
         @endif
     </div>
     <div class="form-group">
-        <label for="discount_price">Precio Original</label>
+        <label for="discount_price">Precio Descueto</label>
         <input type="number" step="0.01" name="discount_price" id="discount_price" class="form-control" placeholder="Escribe el discount price aquí" value="{{old('discount_price')}}">
         @if ($errors->has('discount_price'))
             <div class="text-danger">

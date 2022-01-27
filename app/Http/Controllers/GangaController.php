@@ -15,11 +15,15 @@ class GangaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $ganga = Ganga::find($id);
         $categories = Category::all();
-        return view('gangas.index',compact('ganga','categories'));
+        $gangas = Ganga::orderByRaw('(price - discount_price) desc')->take(50)->get();
+        //$gangas = Ganga::orderBy('discount_price', 'ASC')->paginate(8);
+        $collection = collect($gangas)->sortDesc();
+        $gangas = $collection->groupBy('category_id');
+        $gangas->all();
+        return view('gangas.index',compact('gangas','categories'));
     }
 
     /**
@@ -71,7 +75,9 @@ class GangaController extends Controller
      */
     public function show($id)
     {
-        //
+        $ganga = Ganga::find($id);
+        $categories = Category::all();
+        return view('gangas.show',compact('ganga','categories'));
     }
 
     /**

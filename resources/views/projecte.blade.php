@@ -14,7 +14,7 @@
                                     <h1><span>UP TO 50% OFF </span>Gangues Escandaloses</h1>
                                     <p>Ací trobaras <br> les ganges més grans <br> de tota la web.</p>
                                     <div class="button">
-                                        <a href="#" class="btn">Compra Ara !</a>
+                                        <a href="{{route('ganga.index')}}" class="btn">Compra Ara !</a>
                                     </div>
                                 </div>
                             </div>
